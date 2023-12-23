@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <!-- end header section -->
+    
+ 
+
+  <!-- contact section -->
+
+  <section class="contact_section layout_padding">
+    <div class="contact_bg_box">
+      <div class="img-box">
+        <img src="{% static 'images/contact-bg.jpg' %}" alt="">
+      </div>
+    </div>
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Get In touch
+          <br>
+          {% if messages %}
+            {% for message in messages %}
+               {{ message }} 
+            {% endfor %}
+          {% endif %}
+
+        </h2>
+      </div>
+      <div class="">
+        <div class="row">
+          <div class="col-md-7 mx-auto">
+            <form action="" method="post">
+              {% csrf_token %}
+              <div class="contact_form-container">
+                <div>
+                  <div>
+                    <input type="text" placeholder="Full Name" name="fname" />
+                  </div>
+                  <div>
+                    <input type="email" placeholder="Email " name="email"  />
+                  </div>
+                  <div>
+                    <input type="text" placeholder="Phone Number" name="phone" />
+                  </div>
+                  <div class="">
+                    <input type="text" placeholder="Message" class="message_input" name="message" />
+                  </div>
+                  <div class="btn-box ">
+                    <input type="submit" value="submit">
+                     
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end contact section -->
+
+{% endblock content %}

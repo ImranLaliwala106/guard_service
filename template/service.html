@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+    <!-- end header section -->
+  <section class="service_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Our services
+        </h2>
+      </div>
+      <div class="row">
+        {% for ls in listdata %}
+        <div class="col-md-4" >
+          <div class="box ">
+            
+            <div class="img-box">
+              <img src={{ ls.iconImage }} height="100"width="100" />
+              <div class="detail-box">
+              <h6> 
+                {{ ls.serviceTitle }}
+              </h6>
+              <p>
+                {{ ls.serviceDesc }}
+              </p>
+            </div>
+            </div>
+          
+      
+      
+        
+    
+          </div> 
+  </div>
+  {% endfor %}
+  </div>
+  </section>
+
+  <!-- end service section -->
+{% endblock content%}
+  <!-- info section -->
